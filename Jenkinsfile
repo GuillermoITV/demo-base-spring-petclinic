@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'master' }
+    agent { label 'node1' }
     stages {
         stage('download') {
             steps {
@@ -13,9 +13,7 @@ pipeline {
         }
          stage('upload to nexus') {
             steps {
-                sh '''
-                cd target
-                '''
+                sh 'ls'
             }
         }
          stage('deploy') {
