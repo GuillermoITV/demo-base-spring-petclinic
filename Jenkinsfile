@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'node1' }
+    agent { label 'nodo1' }
     stages {
         stage('download') {
             steps {
