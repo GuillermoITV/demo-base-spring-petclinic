@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh '''
                whoami
-               systemctl restart docker 
+               /home/cloud_user/script.sh
                cd /home/cloud_user/workspace/melleva/target/
                cp petclinic.war /home/cloud_user
                docker run -d -p 80:8080 --name prueba dordoka/tomcat
