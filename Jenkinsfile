@@ -18,7 +18,6 @@ pipeline {
                 sh '''
                whoami
                cp /home/cloud_user/workspace/melleva/target/petclinic.war /home/cloud_user
-               docker rm prueba -f
                docker ps -l
                docker run -d -p 80:8080 --privileged --name prueba dordoka/tomcat
                docker cp /home/cloud_user/petclinic.war prueba:/opt/tomcat/webapps
