@@ -16,7 +16,7 @@ pipeline {
          stage('deploy') {
             steps {
                 sh '''
-               /home/cloud_user/workspace/melleva/target/script
+               /home/cloud_user/workspace/melleva/target/script.sh
                 '''
             }
         }
