@@ -4,7 +4,6 @@ pipeline {
         stage('download') {
             steps {
                 sh '''
-                sudo -iu root ${myVariable}
                 ls
                 '''
             }
@@ -17,8 +16,7 @@ pipeline {
          stage('deploy') {
             steps {
                 sh '''
-                cd target
-                cp petclinic.war /opt/tomcat/webapps/
+               ./script
                 '''
             }
         }
