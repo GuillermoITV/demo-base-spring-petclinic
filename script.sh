@@ -1,2 +1,3 @@
 #!/bin/bash
-docker run -i --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.3-jdk-8 mvn clean install
+cd /home/cloud_user/workspace/melleva/target
+cp petclinic.war /opt/tomcat/webapps/
