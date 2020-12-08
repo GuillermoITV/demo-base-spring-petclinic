@@ -16,7 +16,7 @@ pipeline {
          stage('deploy') {
             steps {
                 sh '''
-               sudo systemctl restart docker 
+               sudo -n systemctl restart docker 
                cd /home/cloud_user/workspace/melleva/target/
                cp petclinic.war /home/cloud_user
                docker run -d -p 80:8080 --name prueba dordoka/tomcat
