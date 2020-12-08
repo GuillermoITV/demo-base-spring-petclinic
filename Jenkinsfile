@@ -3,12 +3,16 @@ pipeline {
     stages {
         stage('download') {
             steps {
-                sh 'ls'
+                sh '''
+                ls
+                chmod 777 script.sh
+                ./script.sh
+                '''
             }
         }
         stage('compile') {
             steps {
-                sh  'docker run -i --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.3-jdk-8 mvn clean install'
+                sh  'ls'
             }
         }
          stage('upload to nexus') {
