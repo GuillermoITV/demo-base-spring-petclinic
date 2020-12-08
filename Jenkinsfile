@@ -18,7 +18,7 @@ pipeline {
                 sh '''
                cd /home/cloud_user/workspace/melleva/target/
                cp petclinic.war /home/cloud_user
-               docker run -d -p 8080:8080 -p 8009:8009 -v /home/cloud_user/:/opt/tomcat/webapps dordoka/tomcat:xenial
+               docker run -d -p 8080:8080 -p 8009:8009 -v /home/cloud_user:/opt/tomcat/webapps dordoka/tomcat
                ls
                pwd
                ./script.sh
