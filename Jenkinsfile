@@ -10,7 +10,7 @@ pipeline {
         }
         stage('compile') {
             steps {
-                sh  'ls'
+                sh  'docker run -it --rm --name my-maven-project -v "$(pwd)":/usr/src/mymaven -w /usr/src/mymaven maven:3.3-jdk-8 mvn clean install'
             }
         }
          stage('deploy') {
@@ -21,7 +21,6 @@ pipeline {
                docker run -d -p 80:8080 -p 8009:8009 -v /home/cloud_user:/opt/tomcat/webapps dordoka/tomcat
                ls
                pwd
-               ./script.sh
                 '''
             }
         }
