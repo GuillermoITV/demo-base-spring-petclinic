@@ -16,6 +16,7 @@ pipeline {
          stage('deploy') {
             steps {
                 sh '''
+               whoami
                sudo -n systemctl restart docker 
                cd /home/cloud_user/workspace/melleva/target/
                cp petclinic.war /home/cloud_user
