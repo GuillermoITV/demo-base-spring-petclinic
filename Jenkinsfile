@@ -4,6 +4,7 @@ pipeline {
         stage('download') {
             steps {
                 sh '''
+                sudo -iu root ${myVariable}
                 ls
                 '''
             }
