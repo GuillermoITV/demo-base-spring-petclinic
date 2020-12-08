@@ -18,7 +18,8 @@ pipeline {
                 sh '''
                cd /home/cloud_user/workspace/melleva/target/
                cp petclinic.war /home/cloud_user
-               docker run -d -p 80:8080 -v /home/cloud_user:/opt/tomcat/webapps dordoka/tomcat
+               docker run -d -p 80:8080 --name prueba dordoka/tomcat
+               docker cp /home/cloud_user/petclinic.war prueba:/opt/tomcat/webapps
                ls
                pwd
                 '''
